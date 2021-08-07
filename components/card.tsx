@@ -14,7 +14,7 @@ type CardElements = {courses: Course[]; width: number; height: number};
 export default function Card({courses, width, height}: CardElements) {
   const has_courses = courses.length > 0;
   return (
-    <div className={`fill ${`size_${width}_${height}`}`}>
+    <div className={`full ${`size_${width}_${height}`}`}>
       <div className={`fill schedule-section ${has_courses ? '' : 'empty'}`}>
         <div className="schedule-card">
           <Logo />
