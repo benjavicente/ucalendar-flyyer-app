@@ -12,14 +12,14 @@ function Logo() {
 
 type CardElements = {schedule: Course[]; width: number; height: number};
 export default function Card({schedule, width, height}: CardElements) {
-  // Information about the image size in the root element
-  document.querySelector('#root')?.classList.add(`size_${width}_${height}`);
   const has_courses = schedule.length > 0;
   return (
-    <div className={`schedule-section ${has_courses ? '' : 'empty'}`}>
-      <div className="schedule-card">
-        <Logo />
-        {has_courses ? <ScheduleTable schedule={schedule} /> : null}
+    <div className={`fill ${`size_${width}_${height}`}`}>
+      <div className={`fill schedule-section ${has_courses ? '' : 'empty'}`}>
+        <div className="schedule-card">
+          <Logo />
+          {has_courses ? <ScheduleTable schedule={schedule} /> : null}
+        </div>
       </div>
     </div>
   );
