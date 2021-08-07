@@ -4,7 +4,7 @@ import {range} from '../lib/helpers';
 
 const days_letters = ['L', 'M', 'W', 'J', 'V', 'S'];
 
-export default function ScheduleTable({schedule}: {schedule: Course[]}) {
+export default function ScheduleTable({courses}: {courses: Course[]}) {
   return (
     <table>
       <thead>
@@ -21,7 +21,7 @@ export default function ScheduleTable({schedule}: {schedule: Course[]}) {
             <td className="mod">{mod}</td>
             {days_letters.map((day, i_day) => (
               <td key={day}>
-                {schedule.map((course) =>
+                {courses.map((course) =>
                   course.modules.map((event) =>
                     i_mod === event.module && i_day === event.day ? (
                       <div className={event.category}>{course.code}</div>

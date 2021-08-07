@@ -18,7 +18,7 @@ const course_schema = V.Object({
 });
 
 export const schema = V.Object({
-  schedule: V.Array(course_schema, {default: []})
+  courses: V.Array(course_schema, {default: []})
 });
 
 type Variables = Static<typeof schema>;
@@ -26,7 +26,7 @@ const validator = new Validator(schema);
 export default function MainTemplate(props: TemplateProps<Variables>) {
   const {width, height, variables} = props;
   const {
-    data: {schedule},
+    data: {courses},
     isValid,
     errors
   } = validator.parse(variables);
@@ -35,5 +35,5 @@ export default function MainTemplate(props: TemplateProps<Variables>) {
     console.error('[Flyyer Variables]:', errors);
   }
 
-  return <Card schedule={schedule} height={height} width={width} />;
+  return <Card courses={courses} height={height} width={width} />;
 }
