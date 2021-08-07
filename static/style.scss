@@ -1,0 +1,169 @@
+// TODO: clean it
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+// vertical layout
+.vl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.schedule-section {
+  overflow: hidden;
+  background: linear-gradient(140deg, #88f0f0 0%, #5ab3ce 100%);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin: 0.5em 0;
+  color: #292d2e;
+  .highlight {
+    color: #3b87e9
+  }
+}
+
+.schedule-card {
+  @extend .vl;
+  height: max-content;
+  width: max-content;
+  max-width: 700px;
+  padding: 1rem;
+  background-color: #fdfdfd;
+  border-radius: 5px;
+  z-index: 9;
+
+  box-shadow: 3px 3px 6px 3px #0002;
+  & table {
+    width: 100%;
+    margin: 15px 0;
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: collapse;
+    & tr > td:first-child {
+      width: 20px;
+    }
+    & td {
+      border: 1px solid #dbdbdb;
+      height: 25px;
+    }
+    & div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 2px 6px;
+      height: 25px;
+      &:not(:last-child) {
+        margin-bottom: 2px;
+      }
+    }
+    & div.assis {
+      background-color: #99CC99;
+    }
+    & div.class {
+      background-color: #FBC575;
+    }
+    & div.lab {
+      background-color: #B3D4F5;
+    }
+    & div.workshop {
+      background-color: #C7C2F8;
+    }
+    & div.field {
+      background-color: #FFCCFF;
+    }
+    & div.practice {
+      background-color: #CCCC99;
+    }
+    & div.tesis {
+      background-color: #B2EFEF;
+    }
+    & div.other {
+      background-color: #FF9999;
+    }
+  }
+}
+
+$calendar_bars_height: 40px;
+$calendar_bars_padding: 20px;
+.empty {
+  .logo {
+    margin: 0
+  }
+  &::before, &::after {
+    content: " ";
+    height: $calendar_bars_height;
+    background-color: #464646;
+    width: 7px;
+    border-radius: 3px;
+    z-index: 2;
+    position: relative;
+    top: -$calendar_bars_height;
+  }
+  &::before {
+    left: $calendar_bars_padding
+  }
+  &::after {
+    right: $calendar_bars_padding
+  }
+}
+
+// Costume sizes
+.size_400_400 {
+  .empty.schedule-section{
+    zoom: 1.8
+  }
+  .logo {
+    margin: 0
+  }
+  .schedule-card table div {
+    font-size: 0;
+    height: 20px;
+    color: transparent;
+  }
+  .schedule-card table tr > td:first-child {
+    width: 0px;
+    font-size: 0;
+    border: none;
+  }
+}
+
+.size_1200_630 {
+  .logo {
+    margin: 0.1em 0
+  }
+  .empty.schedule-section{
+    zoom: 3
+  }
+  :not(.empty).schedule-section {
+    zoom: 1.5;
+  }
+}
+
+.size_1080_1080 {
+  .empty.schedule-section{
+    zoom: 4
+  }
+  :not(.empty).schedule-section {
+    zoom: 1.6;
+  }
+}
+
+.size_1080_1920 {
+  .empty.schedule-section{
+    zoom: 4.2
+  }
+  :not(.empty).schedule-section {
+    zoom: 1.6;
+  }
+}
+
