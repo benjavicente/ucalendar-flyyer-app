@@ -103,7 +103,7 @@
 
 $calendar_bars_height: 40px;
 $calendar_bars_padding: 20px;
-.empty {
+.empty.schedule-section {
   .logo {
     margin: 0
   }
@@ -111,7 +111,7 @@ $calendar_bars_padding: 20px;
     content: " ";
     height: $calendar_bars_height;
     background-color: #464646;
-    width: 7px;
+    min-width: 8px;
     border-radius: 3px;
     z-index: 2;
     position: relative;
