@@ -1,6 +1,27 @@
 # UCalendar Flyyer App
 
-> Meta image generator for UCalendar using Flyyer.
+Meta image generator for UCalendar using Flyyer.
+
+Example data:
+
+```js
+{}
+```
+
+```js
+{
+  courses: [
+    {
+      code: "CALC",
+      modules: [
+        {category: "class", day: 1, module: 2},
+        {category: "class", day: 3, module: 2},
+        {category: "assis", day: 4, module: 2},
+      ],
+    },
+  ]
+}
+```
 
 ----
 
