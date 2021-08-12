@@ -22,7 +22,7 @@ export default function ScheduleTable({courses}: {courses: Course[]}) {
             {days_letters.map((day, i_day) => (
               <td key={day}>
                 {courses.map((course) =>
-                  course.modules.map((event) =>
+                  course.schedule.map((event) =>
                     i_mod === event.module && i_day === event.day ? (
                       <div className={event.category}>{course.code}</div>
                     ) : null
