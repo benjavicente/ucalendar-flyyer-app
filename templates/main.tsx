@@ -15,7 +15,7 @@ const schedule_schema = V.Object({
 
 const course_schema = V.Object({
   c: V.String(),
-  _: V.Array(schedule_schema)
+  _: V.Array(schedule_schema, {default: []})
 });
 
 export const schema = V.Object({
@@ -24,7 +24,7 @@ export const schema = V.Object({
 
 type Variables = Static<typeof schema>;
 
-export function load_data_of_minified_schema(data: Variables): Course[] {
+function load_data_of_minified_schema(data: Variables): Course[] {
   return data._.map((min_course) => ({
     code: min_course.c,
     schedule: min_course._.map((min_schedule_item) => ({

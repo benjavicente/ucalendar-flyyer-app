@@ -10,13 +10,29 @@ Example data:
 
 ```js
 {
-  courses: [
+  _: [
     {
-      code: "CALC",
-      modules: [
-        {category: "class", day: 1, module: 2},
-        {category: "class", day: 3, module: 2},
-        {category: "assis", day: 4, module: 2},
+      c: "CALC",
+      _: [
+        {c: "class", d: 1, m: 2},
+        {c: "class", d: 3, m: 2},
+        {c: "assis", d: 4, m: 2},
+      ],
+    },
+      {
+      c: "ALG",
+      _: [
+        {c: "class", d: 1, m: 1},
+        {c: "class", d: 3, m: 4},
+        {c: "assis", d: 4, m: 2},
+      ],
+    },
+    {
+      c: "LET",
+      _: [
+        {c: "class", d: 3, m: 2},
+        {c: "class", d: 4, m: 1},
+        {c: "assis", d: 1, m: 5},
       ],
     },
   ]
