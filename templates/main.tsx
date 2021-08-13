@@ -27,7 +27,7 @@ type Variables = Static<typeof schema>;
 function load_data_of_minified_schema(data: Variables): Course[] {
   return data._.map((min_course) => ({
     code: min_course.c,
-    schedule: min_course._.map((min_schedule_item) => ({
+    schedule: (min_course._ ? min_course._ : []).map((min_schedule_item) => ({
       category: min_schedule_item.c,
       day: min_schedule_item.d,
       module: min_schedule_item.m
